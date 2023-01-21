@@ -1,0 +1,35 @@
+name: get_coordinates
+on:
+  schedule:
+    - cron: '0 0-21/3 * * *'
+  workflow_dispatch:
+jobs:
+  update_plot:
+    name: Update plot with new extreme weather data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        
+        with:
+          python-version: '3.8'
+          cache: 'pip'
+      
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+        
+        
+      - name: Run Script and Update Plot
+        run: |
+          jupyter nbconvert --to script get_coordinates.ipynb
+          python get_coordinates.py
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "s10222756@connect.np.edu.sg"
+          git config --local user.name "vibu"
+          git add resale_price.csv
+          git commit -m "updates hdb listings with lat and long"
+          git push origin master
