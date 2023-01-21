@@ -3,9 +3,10 @@ on:
   schedule:
     - cron: '0 0-21/3 * * *'
   workflow_dispatch:
+  
 jobs:
   update_plot:
-    name: Update plot with new extreme weather data
+    name: Update data with lat and long
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
