@@ -16,7 +16,7 @@ jobs:
       run: |
         git config --local user.email "s10222756@connect.np.edu.sg"
         git config --local user.name "vibu"
-        git add resale_price.csv
+        git add test.txt
         git commit -m "updates hdb listings with lat and long"
         git push main
         git pull main
