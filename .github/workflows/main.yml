@@ -33,4 +33,5 @@ jobs:
           git config --local user.name "vibu"
           git add resale_price.csv
           git commit -m "updates hdb listings with lat and long"
-          git push origin master
+          git push main
+          git pull main
