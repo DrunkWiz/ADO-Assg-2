@@ -9,13 +9,12 @@ jobs:
     name: Testing push and pull
     runs-on: ubuntu-latest
     steps:
-    - name: Set environment variable
-      run: echo ::set-env name=TOKEN::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
+
     - name: Checkout
       uses: actions/checkout@v2
       with:
         token:
-          ${{env.TOKEN}}
+          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
         
       
     - name: Create empty text file
