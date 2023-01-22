@@ -1,0 +1,23 @@
+name: tester
+on:
+  schedule:
+    - cron: '0 0-21/3 * * *'
+  workflow_dispatch:
+jobs:
+  update_plot:
+    name: Testing push and pull
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Create empty text file
+      run: echo "" > test.txt
+      
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.email "s10222756@connect.np.edu.sg"
+        git config --local user.name "vibu"
+        git add resale_price.csv
+        git commit -m "updates hdb listings with lat and long"
+        git push main
+        git pull main
+  
