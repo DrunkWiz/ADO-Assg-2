@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           token:
-            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
+            ${{secrets.TOKEN}}
         
       - name: Setup Python
         uses: actions/setup-python@v2
