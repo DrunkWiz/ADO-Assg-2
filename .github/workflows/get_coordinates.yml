@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --local user.email "vibumy@gmail.com"
           git config --local user.name "Github Actions"
-          git init
+     
           git add resale_price.csv
           git commit -m "updates hdb listings with lat and long"
-          git push origin master
+          git push 
