@@ -1,8 +1,8 @@
 name: get_coordinates
 on:
-  push:
-    paths:
-      - 'ResaleHouses.csv'
+    schedule:
+    - cron: '00 00 1 * *'
+    workflow_dispatch:
 jobs:
   update_plot:
     name: Update data with lat and long
@@ -33,6 +33,7 @@ jobs:
         run: |
           git config --local user.email "vibumy@gmail.com"
           git config --local user.name "Github Actions"
+          git init
           git add resale_price.csv
           git commit -m "updates hdb listings with lat and long"
           git push origin master
