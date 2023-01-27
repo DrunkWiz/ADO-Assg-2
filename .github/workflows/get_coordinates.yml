@@ -37,7 +37,7 @@ jobs:
           git add resale_price.csv
           git add resale_price_ang_mo_kio.csv
           git add resale_price_bukit_timah.csv
-          git add resale_price_woodlands.cs  git add resale_price_bukit_timah.csvv
+          git add resale_price_woodlands.csv  
           git add resale_price_sengkang.csv
           git add resale_price_bedok.csv
           git commit -m "updates hdb listings with lat and long"
